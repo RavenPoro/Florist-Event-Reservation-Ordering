@@ -80,6 +80,11 @@
 							 data-id="<?= $row['id']?>"
 							 data-product_name="<?= $row['product_name']?>"
 							 data-price="<?= $row['price']?>" ><i class="fa fa-shopping-basket"></i> Add to cart</button>
+							 
+							<button class="btn btn-success btn-sm cart"
+							 data-id="<?= $row['id']?>"
+							 data-product_name="<?= $row['product_name']?>"
+							 data-price="<?= $row['price']?>" ><i class="fa fa-shopping-basket"></i> Buy Now</button>
 						</div>
 						<!-- </form> -->
 					</div>
