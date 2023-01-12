@@ -1,3 +1,7 @@
+<?php
+print_r($products);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--divinectorweb.com-->
@@ -7,6 +11,7 @@
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>BeTwin - Home</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="<?php echo base_url()?>/js/custom.js"></script>
 	<!-- All CSS -->
 	<link href="<?php echo site_url('assets/'); ?>css/styles.css" rel="stylesheet" />
 	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
@@ -67,7 +72,7 @@
 					<div class="card">
 						<!-- <form action="< ?= site_url('addtocart'.$row['id'])?>" method="post"> -->
 						<div class="card-body text-center">
-							<h5 class="cart-title"><?= $row['product_name'] ?></h5>
+							<h5 class="cart-title" id="pname"><?= $row['product_name'] ?></h5>
 							<p class="card-text">
 								<img src="<?= base_url("uploads/".$row['image'])?>" height="200px" width="200x">
 							</p>
@@ -75,16 +80,8 @@
 							<label><?= number_to_currency($row['price'], 'PHP', 'en-us', 2); ?></label><br>
 
 							<p class="cartd-text"><?= $row['description'] ?></p>
-
-							<button class="btn btn-success btn-sm cart"
-							 data-id="<?= $row['id']?>"
-							 data-product_name="<?= $row['product_name']?>"
-							 data-price="<?= $row['price']?>" ><i class="fa fa-shopping-basket"></i> Add to cart</button>
-							 
-							<button class="btn btn-success btn-sm cart"
-							 data-id="<?= $row['id']?>"
-							 data-product_name="<?= $row['product_name']?>"
-							 data-price="<?= $row['price']?>" ><i class="fa fa-shopping-basket"></i> Buy Now</button>
+							
+							<a href="javascript:void(0)" onclick="add_tocart()"><button class="btn btn-success btn-sm cart"><i class="fa fa-shopping-basket"></i> Add to cart</button></a>
 						</div>
 						<!-- </form> -->
 					</div>

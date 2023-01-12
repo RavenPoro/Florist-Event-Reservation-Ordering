@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\AdminModel;
 use App\Models\UserModel;
+use App\Models\BookingModel;
 
 class AdminController extends BaseController
 {
@@ -14,6 +15,14 @@ class AdminController extends BaseController
         $register = new UserModel(); 
         $data['register'] = $register->findAll();
         return view('admin_dashboard/dashboard', $data);
+        
+    }
+
+    public function total()
+    {
+        $booking = new BookingModel();
+        $booking->where('status', 'Finished');
+        echo $data['count']=$booking->countAllResults();
     }
 
     public function pos()

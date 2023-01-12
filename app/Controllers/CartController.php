@@ -27,5 +27,7 @@ class CartController extends BaseController
             'status' => 'added'
         ];
         $cart->save($data);
+
+        echo 'Hello';
     }
 }

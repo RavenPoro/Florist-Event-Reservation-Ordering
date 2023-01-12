@@ -132,7 +132,7 @@
                             
                                 <div class="col-md-3">
 									<div class="form-group mb-2">
-										<label>Event Category</label>
+										<label>Event Name</label>
 										<select name="category" class="form-select" aria-label="Default select example">
 											<option>Wedding</option>
 											<option>Catering</option>
@@ -155,12 +155,6 @@
 										<input type="time" name="end" class="form-control" placeholder="00:00am - 00:00pm" aria-label="Enter location">
 									</div>
 									<div class="form-group mb-2">
-										<!-- <label>Mode of Payment</label>
-										<select name="mop" class="form-select" aria-label="Default select example">
-											<option selected>Choose mode of payment</option>
-											<option>Cash on hand</option>
-											<option>Gcash</option>
-										</select> -->
 										<input type="hidden" name="status" value="Pending">
 									</div>
 									

@@ -27,24 +27,24 @@
                                 <div class="col-md-6">
                                     <div class="form-group mb-2">
                                         <label>Full Name</label>
-                                        <input type="text" name="fullname" value="<?= $booking['fullname'] ?>" class="form-control" placeholder="Enter Full Name" aria-label="Enter Full Name">
+                                        <input type="text" name="fullname" value="<?= $booking['fullname'] ?>" class="form-control" placeholder="Enter Full Name" readonly>
                                     </div>
                                     <div class="form-group mb-2">
                                         <label>Contact Number</label>
-                                        <input type="text" name="contact" value="<?= $booking['contact'] ?>" class="form-control" placeholder="Enter Contact Number" aria-label="Enter Contact Number">
+                                        <input type="text" name="contact" value="<?= $booking['contact'] ?>" class="form-control" placeholder="Enter Contact Number" readonly>
                                     </div>
                                     <div class="form-group mb-2">
                                         <label>Email Address</label>
-                                        <input type="text" name="email" value="<?= $booking['email'] ?>" class="form-control" placeholder="Enter Email Address" aria-label="Enter Email Address">
+                                        <input type="text" name="email" value="<?= $booking['email'] ?>" class="form-control" placeholder="Enter Email Address" readonly>
                                     <br><hr>
                                     </div>
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select name="status" value="<?= $booking['status'] ?>" class="form-select">
-                                        <option>Approved</option>
-                                        <option>Pending</option>
-                                        <option>Cancelled</option>
-                                        <option>Finished</option>
+                                            <option>Pending</option>
+                                            <option>Approved</option>
+                                            <option>Cancelled</option>
+                                            <option>Finished</option>
                                         </select>
                                     </div>
 
@@ -52,12 +52,8 @@
                             
                                 <div class="col-md-6">
                                     <div class="form-group mb-2">
-                                        <label>Event Category</label>
-                                        <select name="category" value="<?= $booking['category'] ?>" class="form-select" aria-label="Default select example">
-                                            <option>Wedding</option>
-                                            <option>Catering</option>
-                                            
-                                        </select>
+                                        <label>Event Name</label>
+                                        <input type="text" name="category" value="<?= $booking['category'] ?>" class="form-control" readonly>
                                     </div>
                                     <!-- <div class="form-group mb-2">
                                         <label>Product & Design Packages</label>
@@ -69,7 +65,7 @@
                                     </div> -->
                                     <div class="form-group mb-2">
                                         <label>Location of Events</label>
-                                        <input type="text" name="location" value="<?= $booking['location'] ?>" class="form-control" placeholder="Enter location" aria-label="Enter location">
+                                        <input type="text" name="location" value="<?= $booking['location'] ?>" class="form-control" placeholder="Enter location" readonly>
                                     </div>
 
                                     <div class="form-group mb-2">

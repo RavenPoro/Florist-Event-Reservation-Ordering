@@ -6,6 +6,7 @@
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>BeTwin - Home</title>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<!-- All CSS -->
 	<link href="<?php echo site_url('assets/'); ?>css/styles.css" rel="stylesheet" />

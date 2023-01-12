@@ -1,0 +1,99 @@
+ERROR - 2023-01-09 16:29:05 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\finalproject\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\xampp\htdocs\finalproject\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'finalproject', 3306, '', 0)
+#1 C:\xampp\htdocs\finalproject\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\finalproject\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\finalproject\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\finalproject\system\Validation\Rules.php(104): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\finalproject\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_not_unique('sample@gmail.co...', 'email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\finalproject\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sample@gmail.co...', Array, Array)
+#7 C:\xampp\htdocs\finalproject\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\finalproject\app\Controllers\AuthController.php(129): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(927): App\Controllers\AuthController->check()
+#10 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\finalproject\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\finalproject\system\Commands\Server\rewrite.php(46): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\finalproject\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\finalproject\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\finalproject\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\finalproject\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\finalproject\system\Validation\Rules.php(104): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\finalproject\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_not_unique('sample@gmail.co...', 'email', Array, NULL, 'email')
+#5 C:\xampp\htdocs\finalproject\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sample@gmail.co...', Array, Array)
+#6 C:\xampp\htdocs\finalproject\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\finalproject\app\Controllers\AuthController.php(129): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(927): App\Controllers\AuthController->check()
+#9 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\finalproject\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\finalproject\system\Commands\Server\rewrite.php(46): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-01-09 16:29:05 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `register`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(104): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_not_unique('sample@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'email', 'sample@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(129): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\AuthController->check()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+ERROR - 2023-01-09 16:34:21 --> mysqli_sql_exception: Not unique table/alias: 'booking' in C:\xampp\htdocs\finalproject\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\finalproject\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\finalproject\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\finalproject\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\finalproject\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\finalproject\system\Model.php(772): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\finalproject\app\Controllers\Reservation.php(49): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(927): App\Controllers\Reservation->bookoverview()
+#7 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reservation))
+#8 C:\xampp\htdocs\finalproject\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\finalproject\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\finalproject\system\Commands\Server\rewrite.php(46): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2023-01-09 16:34:21 --> Not unique table/alias: 'booking'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `booking`
+JOIN `booking` ON `booking`.`id` = `book_overview`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `booking`
+JOIN `booking` ON `booking`.`id` = `book_overview`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `booking`
+JOIN `booking` ON `booking`.`id` = `book_overview`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `booking`
+JOIN `booking` ON `booking`.`id` = `book_overview`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(772): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Reservation.php(49): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Reservation->bookoverview()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reservation))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-01-09 16:35:11 --> Undefined variable $bookingoverview
+in APPPATH\Views\layout\bookoverview.php on line 75.
+ 1 APPPATH\Views\layout\bookoverview.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bookingoverview', 'APPPATH\\Views\\layout\\bookoverview.php', 75)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\bookoverview.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('layout/bookoverview', [], true)
+ 5 APPPATH\Controllers\Reservation.php(49): view('layout/bookoverview')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Reservation->bookoverview()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reservation))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

@@ -41,7 +41,7 @@ $routes->setAutoRoute(true);
 
 
 /** <---------------DEFAULT VIEW OR LANDING PAGE ROUTE-----------------> */
-$routes->get('/',                              'Reservation::landing');
+$routes->get('/landing',                              'Reservation::landing');
 
 
 /** <--------------- CRUD for RESERVATION BOOKING ---------------------> */
@@ -85,7 +85,7 @@ $routes->post('/design_list/update/(:num)',   'ProductController::design_update/
 /** <---------------ADD TO CART ROUTE---------------------------------> */
 
 $routes->get('/product_cart',                  'CartController::product_cart');
-$routes->post('/addtocart',                    'CartController::addtocart');
+$routes->match(['get', 'post'], 'addtocart',   'CartController::addtocart');
 
 /** <---------------ADMIN LOGIN ROUTE----------------------------------> */
 $routes->get('/admin',                         'AdminController::admin');
@@ -114,6 +114,7 @@ $routes->get('/layout/registerpage',           'AuthController::register');
 
 
 $routes->get('/dashboard', 'AdminController::dashboard');
+$routes->get('/total', 'AdminController::total');
 $routes->get('/pos', 'AdminController::pos');
 $routes->get('/order_list', 'AdminController::order_list');
 $routes->get('/sales_report', 'AdminController::sales_report');
@@ -121,6 +122,18 @@ $routes->get('/delivery_list', 'AdminController::delivery_list');
 
 
 
+
+
+
+
+
+
+
+$routes->match(['get','post'], '/', 'Admin::signin', ['filter' => 'noauth']);
+$routes->match(['get','post'], '/signup', 'Admin::signup', ['filter' => 'noauth']);
+$routes->match(['get','post'], '/edituser/(:any)', 'Admin::edituser/$1', ['filter' => 'auth']);
+$routes->get('admindashboard', 'Admin::admindashboard', ['filter' => 'auth']);
+$routes->get('logout', 'Admin::logout');
 
 /*
  * --------------------------------------------------------------------

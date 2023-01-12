@@ -5,6 +5,7 @@ use App\Controllers\BaseController;
 use App\Models\BookingModel;
 use App\Models\ProductModel;
 use App\Models\DesignModel;
+use App\Models\BookOverviewModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -44,9 +45,7 @@ class Reservation extends BaseController
 
     public function bookoverview() 
     {   
-        $booking = new BookingModel();
-        $data['booking'] = $booking->findAll();
-        return view('layout/bookoverview', $data);
+        return view('layout/bookoverview');
     }
 
     public function reservation() /**------- BOOK NOW --------*/
